@@ -76,32 +76,25 @@
             font-size: 1.8rem;
         }
 
-        .tableau-container {
-            position: relative;
-            padding-bottom: 75%; /* Adjusted for typical Tableau dashboard aspect ratio */
-            height: 0;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .tableau-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .fallback {
+        .dashboard-link {
             text-align: center;
-            margin-top: 1rem;
+            padding: 2rem;
         }
 
-        .fallback a {
-            color: #ffeb3b;
-            text-decoration: underline;
+        .dashboard-link a {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #ffeb3b;
+            color: #333;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .dashboard-link a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         @keyframes slideIn {
@@ -144,16 +137,9 @@
     <div class="container">
         <div class="section" id="dashboard">
             <h2>Interactive Tableau Dashboard <span class="emoji-bounce">📊</span></h2>
-            <div class="tableau-container">
-                <iframe 
-                    src="https://public.tableau.com/views/Book1_17425461429260/Dashboard1?:embed=y&:toolbar=n&:display_count=n&:origin=viz_share_link" 
-                    allowfullscreen
-                    scrolling="no"
-                    allowtransparency="true">
-                </iframe>
-            </div>
-            <div class="fallback">
-                <p>If the dashboard doesn't load, <a href="https://public.tableau.com/views/Book1_17425461429260/Dashboard1" target="_blank">view it directly on Tableau Public</a>! 🌐</p>
+            <div class="dashboard-link">
+                <p>Explore our awesome data visualizations! 🚀</p>
+                <a href="https://public.tableau.com/views/Book1_17425461429260/Dashboard1" target="_blank">Open Dashboard</a>
             </div>
         </div>
 
@@ -202,14 +188,6 @@
             setTimeout(() => {
                 alert('Welcome to our Analytics Adventure! 🎉 Explore the data! 📊');
             }, 1000);
-
-            // Check if iframe loaded successfully
-            const iframe = document.querySelector('.tableau-container iframe');
-            iframe.addEventListener('load', () => {
-                if (iframe.contentWindow.document.body.innerHTML === '') {
-                    console.log('Iframe failed to load content');
-                }
-            });
         };
     </script>
 </body>
