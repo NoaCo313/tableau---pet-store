@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Analytics Dashboard 📊✨</title>
     <style>
+        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -19,6 +20,7 @@
             min-height: 100vh;
         }
 
+        /* Header Styles */
         header {
             padding: 2rem;
             text-align: center;
@@ -33,6 +35,7 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
+        /* Navigation */
         nav {
             padding: 1rem;
         }
@@ -56,6 +59,7 @@
             color: #ffeb3b;
         }
 
+        /* Main Content */
         .container {
             max-width: 1200px;
             margin: 2rem auto;
@@ -76,32 +80,25 @@
             font-size: 1.8rem;
         }
 
-        .dashboard-image {
-            text-align: center;
-        }
-
-        .dashboard-image img {
-            max-width: 100%;
-            height: auto;
+        /* Tableau Container */
+        .tableau-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
         }
 
-        .dashboard-image img:hover {
-            transform: scale(1.02);
+        .tableau-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
 
-        .dashboard-image p {
-            margin-top: 1rem;
-            font-size: 0.9rem;
-        }
-
-        .dashboard-image a {
-            color: #ffeb3b;
-            text-decoration: underline;
-        }
-
+        /* Animations */
         @keyframes slideIn {
             from { transform: translateY(-100px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
@@ -112,6 +109,7 @@
             to { opacity: 1; }
         }
 
+        /* Fun Elements */
         .emoji-bounce {
             display: inline-block;
             animation: bounce 2s infinite;
@@ -141,10 +139,13 @@
 
     <div class="container">
         <div class="section" id="dashboard">
-            <h2>Interactive Tableau Dashboard <span class="emoji-bounce">📊</span></h2>
-            <div class="dashboard-image">
-                <img src="dashboard-screenshot.png" alt="Tableau Dashboard Screenshot">
-                <p>For the full interactive experience, <a href="https://public.tableau.com/views/Book1_17425461429260/Dashboard1" target="_blank">visit the live dashboard</a>! 🌐</p>
+            <h2>Main Dashboard <span class="emoji-bounce">📊</span></h2>
+            <div class="tableau-container">
+                <!-- Replace with your actual Tableau Public embed URL -->
+                <iframe src="https://public.tableau.com/views/YOUR_DASHBOARD_URL" 
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
             </div>
         </div>
 
@@ -159,7 +160,7 @@
 
         <div class="section" id="trends">
             <h2>Current Trends <span class="emoji-bounce">🌟</span></h2>
-            <p>Discover the latest patterns in our data! Updated as of March 28, 2025</p>
+            <p>Discover the latest patterns in our data! Updated as of March 27, 2025</p>
         </div>
 
         <div class="section" id="about">
@@ -169,6 +170,7 @@
     </div>
 
     <script>
+        // Smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -178,6 +180,7 @@
             });
         });
 
+        // Add hover effect to sections
         const sections = document.querySelectorAll('.section');
         sections.forEach(section => {
             section.addEventListener('mouseenter', () => {
@@ -189,6 +192,7 @@
             });
         });
 
+        // Welcome alert
         window.onload = () => {
             setTimeout(() => {
                 alert('Welcome to our Analytics Adventure! 🎉 Explore the data! 📊');
