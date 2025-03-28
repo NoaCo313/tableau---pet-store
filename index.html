@@ -76,25 +76,30 @@
             font-size: 1.8rem;
         }
 
-        .dashboard-link {
+        .dashboard-image {
             text-align: center;
-            padding: 2rem;
         }
 
-        .dashboard-link a {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: #ffeb3b;
-            color: #333;
-            text-decoration: none;
+        .dashboard-image img {
+            max-width: 100%;
+            height: auto;
             border-radius: 10px;
-            font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
         }
 
-        .dashboard-link a:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        .dashboard-image img:hover {
+            transform: scale(1.02);
+        }
+
+        .dashboard-image p {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .dashboard-image a {
+            color: #ffeb3b;
+            text-decoration: underline;
         }
 
         @keyframes slideIn {
@@ -137,9 +142,9 @@
     <div class="container">
         <div class="section" id="dashboard">
             <h2>Interactive Tableau Dashboard <span class="emoji-bounce">📊</span></h2>
-            <div class="dashboard-link">
-                <p>Explore our awesome data visualizations! 🚀</p>
-                <a href="https://public.tableau.com/views/Book1_17425461429260/Dashboard1" target="_blank">Open Dashboard</a>
+            <div class="dashboard-image">
+                <img src="dashboard-screenshot.png" alt="Tableau Dashboard Screenshot">
+                <p>For the full interactive experience, <a href="https://public.tableau.com/views/Book1_17425461429260/Dashboard1" target="_blank">visit the live dashboard</a>! 🌐</p>
             </div>
         </div>
 
