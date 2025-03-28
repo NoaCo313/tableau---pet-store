@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Analytics Dashboard 📊✨</title>
     <style>
-        /* Same styles as before, included for completeness */
+        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -20,6 +20,7 @@
             min-height: 100vh;
         }
 
+        /* Header Styles */
         header {
             padding: 2rem;
             text-align: center;
@@ -34,6 +35,7 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
+        /* Navigation */
         nav {
             padding: 1rem;
         }
@@ -57,6 +59,7 @@
             color: #ffeb3b;
         }
 
+        /* Main Content */
         .container {
             max-width: 1200px;
             margin: 2rem auto;
@@ -77,9 +80,10 @@
             font-size: 1.8rem;
         }
 
+        /* Tableau Container */
         .tableau-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 75%; /* Adjusted for typical Tableau aspect ratio */
             height: 0;
             overflow: hidden;
             border-radius: 10px;
@@ -95,6 +99,7 @@
             border: none;
         }
 
+        /* Animations */
         @keyframes slideIn {
             from { transform: translateY(-100px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
@@ -105,6 +110,7 @@
             to { opacity: 1; }
         }
 
+        /* Fun Elements */
         .emoji-bounce {
             display: inline-block;
             animation: bounce 2s infinite;
@@ -137,13 +143,15 @@
             <h2>Interactive Tableau Dashboard <span class="emoji-bounce">📊</span></h2>
             <div class="tableau-container">
                 <iframe 
-                    src="https://public.tableau.com/views/Book1_17425461429260/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link" 
-                    allowfullscreen>
+                    src="https://public.tableau.com/views/Book1_17425461429260/Dashboard1?:embed=y&:toolbar=n&:display_count=n&:origin=viz_share_link" 
+                    frameborder="0"
+                    allowfullscreen
+                    scrolling="no"
+                    allowtransparency="true">
                 </iframe>
             </div>
         </div>
 
-        <!-- Other sections remain unchanged -->
         <div class="section" id="insights">
             <h2>Key Insights <span class="emoji-bounce">💡</span></h2>
             <ul>
@@ -155,7 +163,7 @@
 
         <div class="section" id="trends">
             <h2>Current Trends <span class="emoji-bounce">🌟</span></h2>
-            <p>Discover the latest patterns in our data! Updated as of March 28, 2025</p>
+            <p>Discover the latest patterns in our data! Updated as of March 27, 2025</p>
         </div>
 
         <div class="section" id="about">
@@ -165,7 +173,7 @@
     </div>
 
     <script>
-        // Same JavaScript as before
+        // Smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -175,6 +183,7 @@
             });
         });
 
+        // Add hover effect to sections
         const sections = document.querySelectorAll('.section');
         sections.forEach(section => {
             section.addEventListener('mouseenter', () => {
@@ -186,6 +195,7 @@
             });
         });
 
+        // Welcome alert
         window.onload = () => {
             setTimeout(() => {
                 alert('Welcome to our Analytics Adventure! 🎉 Explore the data! 📊');
